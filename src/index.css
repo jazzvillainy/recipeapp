@@ -5,7 +5,11 @@
 .body{
     margin: 0;
     /* paddin/g: 0; */
+    /* width: 100%; */
 
+}
+.root{
+    width: 100%;
 }
 
 .ingredients{
