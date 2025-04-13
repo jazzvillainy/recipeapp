@@ -9,7 +9,8 @@ import ItemDetail from "./components/ItemDetail";
 
 function App() {
   const [foodData, setFoodData] = useState([]);
-  const [itemId, setItemId] = useState("658615")
+  const [itemId, setItemId] = useState("658615");
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div>
@@ -17,11 +18,19 @@ function App() {
       <Search foodData={foodData} setFoodData={setFoodData} />
       <Container>
         <InnerContainer>
-          <ItemList setItemId={setItemId} foodData={foodData} />
+          <ItemList
+            setItemId={setItemId}
+            foodData={foodData}
+            setShowModal={setShowModal}
+          />
         </InnerContainer>
-        <InnerContainer>
-          <ItemDetail itemId={itemId} />
-        </InnerContainer>
+        {showModal && (
+          <div className="floatonmobile" onClick={() => setShowModal(false)}>
+            <InnerContainer>
+              <ItemDetail itemId={itemId} />
+            </InnerContainer>
+          </div>
+        )}
       </Container>
     </div>
   );

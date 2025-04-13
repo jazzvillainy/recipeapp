@@ -1,9 +1,18 @@
 import React from 'react'
 import ItemComp from './ItemComp';
-function ItemList({foodData,setItemId}) {
+function ItemList({ foodData, setItemId, setShowModal }) {
   return (
     <div>
-        {foodData.map((food) => {return <ItemComp setItemId={setItemId} key={food.id} food={food}/>})}
+      {foodData.map((food) => {
+        return (
+          <ItemComp
+            setShowModal={setShowModal}
+            setItemId={setItemId}
+            key={food.id}
+            food={food}
+          />
+        );
+      })}
     </div>
   );
 }

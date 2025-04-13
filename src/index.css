@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body{
+    margin: 0;
+    /* paddin/g: 0; */
+
+}
+
+.ingredients{
+    background-color: brown;
+}
+@media (max-width: 768px) {
+  .floatonmobile {
+    /* --- Modal Styles --- */
+    position: fixed; /* Important:  Take it out of the normal flow */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* width: 100%;  Cover the entire screen */
+    /* height: 100%; */ /*Redundant with top, bottom, left, right all being 0*/
+    margin: 0;      /* Remove any margins */
+    z-index: 1000;  /* Ensure it's on top of everything else */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the modal overlay */
+    display: flex;       /* For centering the modal content */
+    flex-direction: column;
+    align-items: center;  /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    box-sizing: border-box; /* Include padding/border in width/height */
+    padding: 20px; /*Add padding so content isn't flush with edges*/
+
+    /* --- Modal Content Styles (Inner Container) --- */
+    & > * { /* Target the direct children of .my-component.  Crucial! */
+      background-color: white; /* Or your modal background color */
+      border-radius: 8px;    /* Rounded corners for the modal content */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for a modal effect */
+      /* width: 90%;  Or a fixed width, experiment.  Max width is best practice*/
+      max-width: 90%; /*Ensure it doesn't overflow on small screens*/
+      max-height: 90%; /* Limit the height, especially if content might be long */
+      overflow-y: auto;  /* Enable scrolling within the modal content if needed */
+      padding: 20px;
+    }
+  }
+}

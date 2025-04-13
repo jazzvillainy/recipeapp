@@ -38,7 +38,7 @@ function ItemDetail({ itemId }) {
             <div>
               <span>Price per serving: {item.pricePerServing}</span>
             </div>
-            <h2 className="ingredients">Ingredients</h2>
+            <h2 >Ingredients</h2>
             <Ingr item={item} isLoading={isLoading} />
             <h2>Instructions</h2>
             <div>

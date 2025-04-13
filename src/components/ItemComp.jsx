@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./itemcomp.module.css";
 
-function ItemComp({food,setItemId}) {
+function ItemComp({ food, setItemId, setShowModal }) {
   return (
     <div className={styles.itemContainer}>
       <img className={styles.img} src={food.image} alt="" />
@@ -9,9 +9,16 @@ function ItemComp({food,setItemId}) {
         <p className={styles.itemName}>{food.title}</p>
       </div>
       <div className={styles.buttonContainer}>
-        <button onClick={()=>{console.log(food.id)
-        setItemId(food.id);
-        }} className={styles.itemButton}>View Recipe</button>
+        <button
+          onClick={() => {
+            console.log(food.id);
+            setItemId(food.id);
+            setShowModal(true);
+          }}
+          className={styles.itemButton}
+        >
+          View Recipe
+        </button>
       </div>
     </div>
   );
